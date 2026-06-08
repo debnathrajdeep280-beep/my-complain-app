@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File a Complaint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        button {
+            width: 100%;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #e60000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Global Complaint Form</h2>
+    <form action="/submit_complaint" method="POST">
+        
+        <label for="title">Complaint Title (Shikayat ka Vishay)</label>
+        <input type="text" id="title" name="title" placeholder="e.g., Water shortage, Road issue" required>
+
+        <label for="category">Category (Vibhag)</label>
+        <select id="category" name="category" required>
+            <option value="">Select Category</option>
+            <option value="Electricity">Electricity (Bijli)</option>
+            <option value="Water Supply">Water Supply (Paani)</option>
+            <option value="Roads">Roads & Transport (Sadak)</option>
+            <option value="Garbage">Garbage & Cleanliness (Safai)</option>
+            <option value="Other">Other (Anya)</option>
+        </select>
+
+        <label for="description">Description (Poori Jankari)</label>
+        <textarea id="description" name="description" placeholder="Write your complaint in detail here..." required></textarea>
+
+        <label for="location">Location (Aapka Ilaqa/City)</label>
+        <input type="text" id="location" name="location" placeholder="e.g., Delhi, Mumbai, Ward No. 5" required>
+
+        <button type="submit">Submit Complaint (Shikayat Darj Karein)</button>
+    </form>
+</div>
+
+</body>
+</html>
